@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Popular Stocks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for(stock of stocks; track stock.symbol) {
+    <ion-item>
+      <ion-label>
+        <h2>{{ stock.symbol }}</h2>
+        <p>{{ stock.name }}</p>
+      </ion-label>
+      <ion-label slot="end">
+        {{ stockData[stock.symbol]?.c | currency }}
+      </ion-label>
+      <ion-button slot="end" (click)="addToWatchlist(stock.symbol)">
+        + Watch
+      </ion-button>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

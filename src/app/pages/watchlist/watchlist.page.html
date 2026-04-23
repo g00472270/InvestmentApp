@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Watchlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for(symbol of watchlist; track symbol) {
+    <ion-item>
+      <ion-label>
+        <h2>{{ symbol }}</h2>
+        <p>{{ stockData[symbol]?.c | currency }}</p>
+      </ion-label>
+      <ion-button slot="end" color="danger" (click)="removeFromWatchlist(symbol)">
+        Remove
+      </ion-button>
+    </ion-item>
+    }
+  </ion-list>
+
+  <p *ngIf="watchlist.length === 0" style="text-align:center; margin-top: 20px;">
+    No stocks in watchlist yet.
+  </p>
+</ion-content>
