@@ -36,6 +36,22 @@ An Ionic Angular application for tracking and managing stock investments.
    # or
    ionic serve
    ```
+
 ## API Configuration
 
 The app uses the Finnhub API for stock data. The API key is in `src/app/services/stock.service.ts`.
+
+## App Navigation
+
+Routes defined in `src/app/app.routes.ts`:
+
+- `/home` - Home page
+- `/search` - Search page
+- `/watchlist` - Watchlist page
+- `/stock-detail/:symbol` - Stock detail page
+
+## Notes
+
+- The watchlist is stored locally on the device using Ionic Storage.
+- Stock search and detail data depend on Finnhub API availability.
+- For user documentation, see `wiki/User-Guide.md`.
