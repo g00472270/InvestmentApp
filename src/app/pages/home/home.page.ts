@@ -14,8 +14,7 @@ import { Router } from '@angular/router';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel, IonButton, CommonModule]
 })
 export class HomePage {
-
-  //10 pupular stocks
+  
   stocks = [
     { symbol: 'AAPL', name: 'Apple' },
     { symbol: 'TSLA', name: 'Tesla' },
