@@ -15,7 +15,10 @@ export class StockService {
     return this.httpClient.get(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${this.apiKey}`);
   }
 
-  searchStocks(query: string): Observable<any>{
+  searchStocks(query: string): Observable<any> {
     return this.httpClient.get(`https://finnhub.io/api/v1/search?q=${query}&token=${this.apiKey}`);
+  }
+  getCompanyProfile(symbol: string): Observable<any> {
+    return this.httpClient.get(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${this.apiKey}`);
   }
 }

@@ -4,6 +4,7 @@ import { StockService } from '../../services/stock.service';
 import { StorageService } from '../../services/storage';
 import { Browser } from '@capacitor/browser';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -32,8 +33,13 @@ export class HomePage {
 
   constructor(
     private stockService: StockService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private router: Router
   ) { }
+
+  goToDetail(symbol: string) {
+    this.router.navigate(['/stock-detail', symbol]);
+  }
 
   ionViewWillEnter() {
     this.stocks.forEach(stock => {

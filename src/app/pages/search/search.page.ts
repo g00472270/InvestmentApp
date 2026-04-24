@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonLabel, IonButton, FormsModule]
 })
+
 export class SearchPage {
 
   searchQuery: string = '';
@@ -21,7 +22,11 @@ export class SearchPage {
     private stockService: StockService,
     private storageService: StorageService,
     private router: Router
-  ) {}
+  ) { }
+
+  goToDetail(symbol: string) {
+    this.router.navigate(['/stock-detail', symbol]);
+  }
 
   onSearch() {
     if (this.searchQuery.length > 0) {
@@ -34,9 +39,4 @@ export class SearchPage {
   addToWatchlist(symbol: string) {
     this.storageService.addToWatchlist(symbol);
   }
-
-  goToDetail(symbol: string) {
-    this.router.navigate(['/stock-detail', symbol]);
-  }
-
 }

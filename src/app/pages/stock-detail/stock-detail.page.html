@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ symbol }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ profileData?.name }}</ion-card-title>
+      <ion-card-subtitle>{{ symbol }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Price: {{ quoteData?.c | currency }}</p>
+      <p>High: {{ quoteData?.h | currency }}</p>
+      <p>Low: {{ quoteData?.l | currency }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="addToWatchlist()">
+    Add to Watchlist
+  </ion-button>
+
+  <ion-button expand="block" color="secondary" (click)="openNews()">
+    View on Yahoo Finance
+  </ion-button>
+</ion-content>

@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'watchlist',
     loadComponent: () => import('./pages/watchlist/watchlist.page').then(m => m.WatchlistPage)
   },
+  {
+    path: 'stock-detail/:symbol',
+    loadComponent: () => import('./pages/stock-detail/stock-detail.page').then(m => m.StockDetailPage)
+  },
 ];

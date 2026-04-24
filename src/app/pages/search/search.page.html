@@ -10,7 +10,7 @@
 
   <ion-list>
     @for(result of searchResults; track result.symbol) {
-    <ion-item>
+    <ion-item (click)="goToDetail(result.symbol)" button>
       <ion-label>
         <h2>{{ result.symbol }}</h2>
         <p>{{ result.description }}</p>

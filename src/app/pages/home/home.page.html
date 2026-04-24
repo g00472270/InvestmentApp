@@ -7,7 +7,7 @@
 <ion-content>
   <ion-list>
     @for(stock of stocks; track stock.symbol) {
-    <ion-item>
+    <ion-item (click)="goToDetail(stock.symbol)" button>
       <ion-label>
         <h2>{{ stock.symbol }}</h2>
         <p>{{ stock.name }}</p>
