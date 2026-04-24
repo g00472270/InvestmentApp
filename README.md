@@ -21,7 +21,7 @@ An Ionic Angular application for tracking and managing stock investments.
 
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/g00472270/InvestmentApp>
+   git clone https://github.com/g00472270/InvestmentApp
    cd investmentApp
    ```
 
